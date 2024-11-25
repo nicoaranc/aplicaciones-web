@@ -1,0 +1,91 @@
+:root {
+    --color-borde: #c5c4c3;
+}
+
+.container {
+    border: 1px solid var(--color-borde);
+    width: 50%; 
+    height: 75%; 
+    top: 15%;
+    left: 25%;
+    position: fixed; 
+    background-color: #ffffff;
+    
+}
+
+.logo {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.formulario {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+#titulo {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+#agregar-producto-page {
+    background-color: #43e07f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}  
+
+#productos-page {
+    background-color: #4bb4f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}  
+
+#agregar-pedido-page {
+    background-color: #43e07f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}  
+
+#pedidos-page {
+    background-color: #4bb4f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}  
+
+#conf {
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+:root {
+    --color-borde: #c5c4c3;
+}
+
+.container {
+    border: 1px solid var(--color-borde);
+    height: 50%;
+    max-width: 1000px;
+    margin: 2% auto;
+    padding: 2rem;
+    padding-top: .5rem;
+    background-color: #ffffff;
+}
+
+#titulo {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+table, th, td{
+    border: 1px solid;
+    text-align: center;
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+tr:hover {background-color: rgb(140, 221, 172);}

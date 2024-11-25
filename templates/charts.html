@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Gráficos {% endblock %}
+
+{% block css %}
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="{{ url_for('static', filename='css/charts.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <br><br>
+        <header id="titulo"> Estadísticas </header>
+        <div class="botones">
+            <a href="{{ url_for('index')}}">
+                Volver a la página principal
+            </a>
+            <br> <br>
+        </div>
+        <figure>
+            <div id="prod-chart">
+            </div>
+        </figure>
+        <figure>
+            <div id="ped-chart">
+            </div>
+        </figure>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://code.highcharts.com/highcharts.js" ></script>
+    <script lang="es" src="{{ url_for('static', filename='js/charts.js') }}"></script> 
+{% endblock %}

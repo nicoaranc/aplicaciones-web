@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title%} Ver pedidos {% endblock %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-pedidos.css')}}">          
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <header id="titulo">VER PEDIDOS</header> <br>
+            <form class="formulario" id="form">
+                <div class="botones">
+                    <a href="{{ url_for('index')}}">
+                        Volver a la página principal
+                    </a>
+                    <br> <br>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Producto(s)</th>
+                            <th>Región</th>
+                            <th>Comuna</th>
+                            <th>Nombre comprador</th>                            
+                        </tr>
+                        {% if data %}
+                            {% for ped in data %}
+                                <tr onclick="window.location.href='{{ url_for( 'infoPedido', id=ped.id, region=ped.region, comuna=ped.comuna, nombre=ped.nombre )}}';">
+                                    <td>{{ped.tipo}}</td>
+                                    <td>{{ped.productos}}</td>
+                                    <td>{{ped.region}}</td>
+                                    <td>{{ped.comuna}}</td>
+                                    <td>{{ped.nombre}}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </table>
+                    <div class="botones">
+                        {% if posit != 0 %}
+                            <a href="{{ url_for('verPedidos', arg = -5, b = posit) }}">Página anterior</a>
+                        {% endif %}
+                        {% if quantity > 0 %}
+                            <a href="{{ url_for('verPedidos', arg = 5, b = posit) }}">Página siguiente</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+{% endblock %}
+{% block javascript %}
+        <!-- <script lang="es" src="{{ url_for('static', filename='js/ver-pedidos.js') }}"></script> -->
+{% endblock %}

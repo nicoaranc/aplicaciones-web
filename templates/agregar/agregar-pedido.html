@@ -1,0 +1,380 @@
+{% extends 'agregar/base.html' %}
+
+{% block title%} Agregar pedido {% endblock %}
+
+{% block css %}
+
+<link rel=" stylesheet" 
+type="text/css" 
+href="{{ url_for('static', filename='css/agregar-pedido.css')}}">
+{% endblock %}
+
+{% block content %}
+<form class="formulario" id="form" method="post" enctype="multipart/form-data">
+    <body onload="cargar()">
+        <div class="container">
+            {% if error %}
+                <h3 id="error">
+                    {{ error }}
+                </h3>
+            {% endif %}
+            <header id="titulo"> AGREGAR PEDIDOS </header> <br>
+                <div class="botones">
+                    <a href="{{ url_for('index')}}">
+                        Volver a la página principal
+                    </a>
+                    <br> <br>
+                </div>
+                <div id="tipo" class="input-agregar">
+                    <label>Tipo de producto: </label>
+                    <input type="radio" id="fruta" name="tipo_producto" value="Fruta">
+                    <label >Fruta</label>
+                    <input type="radio" id="verdura" name="tipo_producto" value="Verdura">
+                    <label >Verdura</label>
+                </div> <br>
+                <div id="producto" class="input-agregar">
+                    <label> Producto(s): </label>
+                    <div id="frutas" class="input-agregar">
+                        <div class="separador">
+                            <label>
+                                <input type="checkbox" id="fruit1" name="fruit" value="Arándano">
+                                <span>Arándano</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit2" name="fruit" value="Frambuesa">
+                                <span>Frambuesa</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit3" name="fruit" value="Frutilla">
+                                <span>Frutilla</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit4" name="fruit" value="Grosella">
+                                <span>Grosella</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit5" name="fruit" value="Mora">
+                                <span>Mora</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit6" name="fruit" value="Limón">
+                                <span>Limón</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit7" name="fruit" value="Mandarina">
+                                <span>Mandarina</span> 
+                            </label>
+                            <label>                                        
+                                <input type="checkbox" id="fruit8" name="fruit" value="Naranja">
+                                <span>Naranja</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit9" name="fruit" value="Pomelo">
+                                <span>Pomelo</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit10" name="fruit" value="Melón">
+                                <span>Melón</span>
+                            </label>
+                            </div>
+                        <div class="separador">
+                            <label>
+                                <input type="checkbox" id="fruit11" name="fruit" value="Sandía">
+                                <span>Sandía</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit12" name="fruit" value="Palta">
+                                <span>Palta</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit13" name="fruit" value="Chirimoya">
+                                <span>Chirimoya</span>  
+                            </label>
+                            <label>                   
+                                <input type="checkbox" id="fruit14" name="fruit" value="Coco">
+                                <span>Coco</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit15" name="fruit" value="Dátil">
+                                <span>Dátil</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit16" name="fruit" value="Kiwi">
+                                <span>Kiwi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit17" name="fruit" value="Mango">
+                                <span>Mango</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit18" name="fruit" value="Papaya">
+                                <span>Papaya</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit19" name="fruit" value="Piña">
+                                <span>Piña</span>     
+                            </label>
+                            <label>                 
+                                <input type="checkbox" id="fruit20" name="fruit" value="Plátano">
+                                <span>Plátano</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit21" name="fruit" value="Damasco">
+                                <span>Damasco</span>
+                            </label>
+                        </div>
+                        <div class="separador">
+                            <label>
+                                <input type="checkbox" id="fruit22" name="fruit" value="Cereza">
+                                <span>Cereza</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit23" name="fruit" value="Ciruela">
+                                <span>Ciruela</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit24" name="fruit" value="Higo">
+                                <span>Higo</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit25" name="fruit" value="Kaki">
+                                <span>Kaki</span>  
+                            </label>
+                            <label>           
+                                <input type="checkbox" id="fruit26" name="fruit" value="Manzana">
+                                <span>Manzana</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit27" name="fruit" value="Durazno">
+                                <span>Durazno</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit28" name="fruit" value="Nectarin">
+                                <span>Nectarin</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit29" name="fruit" value="Níspero">
+                                <span>Níspero</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit30" name="fruit" value="Pera">
+                                <span>Pera</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit31" name="fruit" value="Uva">
+                                <span>Uva</span>
+                            </label>
+                            <label>                       
+                                <input type="checkbox" id="fruit32" name="fruit" value="Almendra">
+                                <span>Almendra</span>
+                            </label>
+                        </div>
+                        <div class="separador">
+                            <label>
+                                <input type="checkbox" id="fruit33" name="fruit" value="Avellana">
+                                <span>Avellana</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit34" name="fruit" value="Maní">
+                                <span>Maní</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit35" name="fruit" value="Castaña">
+                                <span>Castaña</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit36" name="fruit" value="Nuez">
+                                <span>Nuez</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="fruit37" name="fruit" value="Pistacho">
+                                <span>Pistacho</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="verduras" class="input-agregar">
+                        <div class="separador">
+                            <label>
+                                <input type="checkbox" id="verd1" name="verd" value="Brócoli">
+                                <span>Brócoli</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd2" name="verd" value="Coliflor">
+                                <span>Coliflor</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd3" name="verd" value="Repollo">
+                                <span>Repollo</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd4" name="verd" value="Rábano">
+                                <span>Rábano</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd5" name="verd" value="Alcachofa">
+                                <span>Alcachofa</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd6" name="verd" value="Lechuga">
+                                <span>Lechuga</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd7" name="verd" value="Zapallo">
+                                <span>Zapallo</span>
+                            </label>
+                            <label>                                         
+                                <input type="checkbox" id="verd8" name="verd" value="Pepino">
+                                <span>Pepino</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd9" name="verd" value="Haba">
+                                <span>Haba</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd10" name="verd" value="Maíz">
+                                <span>Maíz</span>
+                            </label>
+                            </div>
+                            <div class="separador">
+                            <label>
+                                <input type="checkbox" id="verd11" name="verd" value="Champiñón">
+                                <span>Champiñón</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd12" name="verd" value="Acelga">
+                                <span>Acelga</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd13" name="verd" value="Apio">
+                                <span>Apio</span>  
+                            </label>
+                            <label>                   
+                                <input type="checkbox" id="verd14" name="verd" value="Espinaca">
+                                <span>Espinaca</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd15" name="verd" value="Perejil">
+                                <span>Perejil</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd16" name="verd" value="Ajo">
+                                <span>Ajo</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd17" name="verd" value="Cebolla">
+                                <span>Cebolla</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd18" name="verd" value="Espárrago">
+                                <span>Espárrago</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd19" name="verd" value="Puerro">
+                                <span>Puerro</span>  
+                            </label>
+                            <label>                    
+                                <input type="checkbox" id="verd20" name="verd" value="Remolacha">
+                                <span>Remolacha</span>
+                            </label>
+                            </div>
+                            <div class="separador" id="sep-f">
+                            <label>
+                                <input type="checkbox" id="verd21" name="verd" value="Berenjena">
+                                <span>Berenjena</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd22" name="verd" value="Papa">
+                                <span>Papa</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd23" name="verd" value="Pimiento">
+                                <span>Pimiento</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd24" name="verd" value="Tomate">
+                                <span>Tomate</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="verd25" name="verd" value="Zanahoria">
+                                <span>Zanahoria</span>  
+                            </label>           
+                            </div>
+                    </div>
+                </div> <br>
+                <div id="descripcion" class="input-agregar">
+                    <label >Descripción: </label>
+                    <textarea id="desc-producto" name="descripcion-producto"  rows="4" cols="50"></textarea> 
+                </div> <br>
+                <div id="región" class="input-agregar">
+                    <label >Región: </label>
+                    <select  id="regiones" name="regiones" >
+                        <option>Seleccione región</option>
+                    </select>
+                </div> <br>
+                <div id="comuna" class="input-agregar">
+                    <label >Comuna: </label>
+                    <select id="comunas" name="comunas">
+                        <option>Seleccione comuna</option>
+                    </select>
+                </div> <br>
+                <div id="nombre-prod" class="input-agregar">
+                    <label >Nombre comprador: </label>
+                    <input id="nombre" name="nombre" type="text" size="80">
+                </div> <br>
+                <div id="email-prod" class="input-agregar">
+                    <label >Email comprador: </label>
+                    <input id="email" name="email" type="email" size="30">
+                </div> <br>
+                <div id="num-prod" class="input-agregar">
+                    <label>Número celular comprador: </label>
+                    <input id="num" name="num" type="text" size="15">
+                </div> <br>
+                <div class="botones">
+                    <button type="button" id="agregar">
+                        Agregar Pedido
+                    </button>
+                </div>
+        </div>
+        <div id="mod1" class="modal">
+            <div class="modal-content">
+                <div class="textos">
+                    <br><br>               
+                    <span>¿Confirma el registro de este pedido?</span>
+                    <br><br><br><br>
+                    
+                </div>
+                <div id="botones1">
+                    <button type="submit" id="confirmar" class="buttons">
+                        Sí, confirmo
+                    </button>
+                    <br><br><br>
+                    <button type="button" id="desconfirmar" class="buttons">
+                        No, quiero volver al formulario
+                    </button>
+                </div>       
+            </div>
+            
+        </div>
+        <div id="mod2" class="modal">
+            <div class="modal-content">
+                <div class="textos">
+                    <br><br>  
+                    <span>Hemos recibido su pedido.
+                    </span>
+                    <br>
+                    <span>Muchas gracias.</span>
+                    <br><br><br><br>
+                </div>
+                <div id="menu">
+                    <a href="{{ url_for('index')}}">
+                        Volver al menú inicial
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <script lang="es" src="{{ url_for('static', filename='js/agregar-pedido.js')}}"></script>
+
+    </body>
+</form>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title%} Información del producto {% endblock %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/informacion-producto.css')}}">          
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            
+            <form class="formulario" id="form" method="post">
+
+                <div class="info-producto" id="info">
+                    <header id="titulo" >INFORMACIÓN DEL PRODUCTO</header> <br>
+                    <div class="botones">
+                        <button type="submit" id="boton-regreso">
+                            Volver a la página principal
+                        </button>
+                        <br> <br>
+                    </div>
+                    <div id="data">
+                        {% if data %}
+                        {% for elem in data %}
+                        <div id="tipo" class="info">
+                            <label>Tipo de producto(s): 
+                                {{elem.tipo}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="nombre" class="info">
+                            <label>Producto(s): 
+                                    {{elem.productos}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="descripcion" class="info">
+                            <label>Descripción:
+                                    {{elem.descripcion}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="region" class="info">
+                            <label>Región: 
+                                    {{elem.region}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="comuna" class="info">
+                            <label>Comuna: 
+                                    {{elem.comuna}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="vendedor" class="info">
+                            <label>Vendedor: 
+                                    {{elem.vendedor}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="email" class="info">
+                            <label>Email: 
+                                    {{elem.email}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="numero" class="info">
+                            <label>Número de teléfono: 
+                                    {{elem.celular}}
+                            </label>
+                        </div>
+                        <br>
+                        <div id="img" class="info">
+                            {% for img in elem.fotos %}
+                                <img src="{{img}}" alt="imagen" onclick="mostrar('{{img}}')">   
+                            {% endfor %}                
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+
+                </div>
+                <div id="mod">   
+                </div>
+            </form>
+        </div>
+{% endblock %}
+{% block javascript %}
+    <script lang="es" src="{{ url_for('static', filename='js/informacion-producto.js')}}"></script>
+{% endblock %}

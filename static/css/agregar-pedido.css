@@ -1,0 +1,171 @@
+:root {
+    --color-borde: #c5c4c3;
+}
+
+.container {
+    border: 1px solid var(--color-borde);
+    height: 50%;
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 2rem;
+    padding-top: .5rem;
+    background-color: #ffffff;
+}
+
+.input-agregar {
+    
+    flex-direction: column;
+}
+
+#titulo {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+#tipos {
+    width: 20%;
+    padding: 5px;
+    border: none;
+    background-color: #fafafa;
+}
+
+#desc-producto {
+    resize: none;
+}
+
+#producto {
+    margin: 8px 0;
+}
+
+#frutas {
+    display: none;
+}
+
+
+
+#verduras {
+    display: none;
+}
+
+label input {
+    text-align: center;
+}
+
+#regiones {
+    width: 27%;
+    padding: 5px;
+    border: none;
+    background-color: #fafafa;
+    margin: 8px 0;
+}
+
+#comunas {
+    width: 27%;
+    padding: 5px;
+    border: none;
+    background-color: #fafafa;
+    margin: 8px 0;
+}
+
+#nombre {
+    width: 27%;
+    padding: 5px;
+    background-color: #fafafa;
+    margin: 8px 0;
+}
+
+#email {
+    width: 27%;
+    padding: 5px;
+    margin: 8px 0;
+    background-color: #fafafa;
+}
+
+#num {
+    width: 27%;
+    padding: 5px;
+    background-color: #fafafa;
+    margin: 8px 0;
+}
+
+#agregar {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(6, 247, 6);
+    font: icon;
+
+}
+
+label > input {
+    
+    margin-top: 1rem;
+}
+  
+input {
+    border: 1px solid var(--color-borde);
+    background-color: #fafafa;
+    height: 20px;
+    padding: 9px;
+}
+
+#error {
+    text-align: center;
+}
+
+/* Modals */
+
+#mod1 {
+    display: none; 
+    position: fixed; 
+    top: 25%;
+    left: 25%;
+    border: 2px solid green;
+    border-radius: 10px;
+    width: 50%; 
+    height: 50%; 
+    background-color: rgb(101, 218, 140); 
+    
+}
+
+#mod2 {
+    display: none; 
+    position: fixed; 
+    top: 25%;
+    left: 25%;
+    border: 2px solid green;
+    border-radius: 10px;
+    width: 50%; 
+    height: 50%; 
+    background-color: rgb(101, 218, 140); 
+    
+}
+
+.textos {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 25px;
+    vertical-align: bottom;
+}
+
+#botones1 {
+    text-align: center;
+}
+
+#menu{
+    text-align: center;
+}
+
+
+
+#desconfirmar{
+
+    background-color: rgb(255, 55, 55);
+}
+
+.buttons{
+    cursor: pointer;
+    width: 50%;
+    padding: 15px 32px;
+    border-radius: 10px;
+}

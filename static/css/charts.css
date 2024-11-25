@@ -1,0 +1,11 @@
+:root {
+    --color-borde: #c5c4c3;
+}
+
+
+
+#titulo {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}

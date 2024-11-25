@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title%} FRUTAS Y VERDURAS {% endblock %}
+
+{% block css %}
+<link 
+rel="stylesheet" 
+type="text/css" 
+href="{{ url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% block content %}
+<div>
+    {% if confirmacion %}
+        <h3 id="conf">{{confirmacion}}</h3>
+    {% endif %}
+    <br><br>
+    <header id="titulo"> FRUTAS Y VERDURAS </header>
+    <br>
+    <br>
+    <br>
+    <div class="logo">
+        <img id="logo-id" src="{{ url_for('static', filename='images/frutas-verduras.jpg') }}" alt="Frutas y verduras">
+    </div>       
+    <br>
+    <form class="formulario" id="index-form"> 
+        <div class="botones">
+            <a href="{{ url_for('agregarProducto') }}">
+                Agregar producto
+            </a>
+        </div>
+        <div class="botones">
+            <a href="{{ url_for('verProductos', arg = 0, b = 0) }}" >
+                Ver productos
+            </a>
+        </div>
+        <div class="botones">
+            <a href="{{ url_for('agregarPedido') }}">
+                Agregar pedido
+            </a>
+        </div>
+        <div class="botones">
+            <a href="{{ url_for('verPedidos', arg = 0, b = 0) }}">
+                Ver pedidos
+            </a>
+        </div>
+        <div class="botones">
+            <a href="{{ url_for('verEstadisticas') }}">
+                Ver estadísticas
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block javascript %}
+       <!-- <script lang="es" src="{{ url_for('static', filename='js/index.js') }}"></script>  -->
+{% endblock %}

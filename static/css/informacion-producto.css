@@ -1,0 +1,40 @@
+:root {
+    --color-borde: #c5c4c3;
+}
+
+#info {
+    border: 1px solid var(--color-borde);
+    height: 50%;
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 2rem;
+    padding-top: .5rem;
+    background-color: #ffffff;
+}
+
+#titulo {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+}
+
+
+#descripcion-producto{
+    resize: none;
+}
+
+#img1{
+    display: contents;
+}
+
+#mod{
+    display: none; 
+    position: fixed; 
+    top: 25%;
+    left: 25%;
+    border: 2px solid green;
+    border-radius: 10px;
+    width: 50%; 
+    height: 50%; 
+    background-color: rgb(101, 218, 140); 
+}

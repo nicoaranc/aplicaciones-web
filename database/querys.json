@@ -1,0 +1,6 @@
+{
+    "upload_producto": "INSERT INTO producto (tipo, descripcion, comuna_id, nombre_productor, email_productor, celular_productor) VALUES (%s, %s, %s, %s, %s, %s);",
+    "upload_fruta_verdura": "INSERT INTO producto_verdura_fruta (producto_id, tipo_verdura_fruta_id) VALUES (%s, %s);",
+    "upload_foto": "INSERT INTO foto (ruta_archivo, nombre_archivo, producto_id) VALUES (%s, %s, %s);",
+    "upload_pedido": "INSERT INTO pedido (tipo, descripcion, comuna_id, nombre_comprador, email_comprador, celular_comprador) VALUES (%s, %s, %s, %s, %s, %s);"
+}
